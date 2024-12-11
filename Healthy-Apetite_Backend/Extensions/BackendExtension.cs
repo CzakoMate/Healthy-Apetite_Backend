@@ -1,4 +1,7 @@
-﻿namespace Healthy_Apetite_Backend.Extensions
+﻿using Microsoft.EntityFrameworkCore;
+using Healthy_Apetite_Backend.Context;
+
+namespace Healthy_Apetite_Backend.Extensions
 {
     public static class BackendExtension
     {
@@ -25,7 +28,7 @@
 
         private static void ConfigureInMemoryContext(this IServiceCollection services)
         {
-            string dbNameInMemoryContext = "Kreta" + Guid.NewGuid();
+            string dbNameInMemoryContext = "HealthyApetite" + Guid.NewGuid();
             services.AddDbContext<HealthyApetiteInMemoryContext>
             (
                  options => options.UseInMemoryDatabase(databaseName: dbNameInMemoryContext),
