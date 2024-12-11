@@ -1,4 +1,7 @@
-﻿namespace Healthy_Apetite_Backend.Context
+﻿
+using Microsoft.EntityFrameworkCore;
+
+namespace Healthy_Apetite_Backend.Context
 {
     public class HealthyApetiteContext : DbContext
     {
