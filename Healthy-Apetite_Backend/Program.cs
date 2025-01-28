@@ -8,7 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddBackend();
-builder.ConfigureWebHost();
+//builder.ConfigureWebHost();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
