@@ -10,6 +10,7 @@ namespace Healthy_Apetite_Backend.Extensions
         {
             services.ConfigureCors();
             services.ConfigureInMemoryContext();
+            services.ConfigureRepos();
         }
 
         private static void ConfigureCors(this IServiceCollection services)
