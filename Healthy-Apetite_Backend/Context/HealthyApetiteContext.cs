@@ -12,7 +12,7 @@ namespace Healthy_Apetite_Backend.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Seed();
+            //modelBuilder.Seed();
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Promotion> Promotions { get; set; }
