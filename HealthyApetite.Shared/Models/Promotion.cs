@@ -1,13 +1,13 @@
 ﻿using System.Xml.Linq;
 
-namespace Healthy_Apetite_Backend.Datas.Entities
+namespace HealthyApetite.Shared.Models
 {
     public class Promotion
     {
         public Promotion()
         {
             Id = Guid.NewGuid();
-            StartDate=DateTime.Now;
+            StartDate = DateTime.Now;
             EndDate = DateTime.Now;
             DiscountRate = 0;
         }
@@ -34,7 +34,7 @@ namespace Healthy_Apetite_Backend.Datas.Entities
         public Guid Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public double DiscountRate {  get; set; }
+        public double DiscountRate { get; set; }
         public override string ToString()
         {
             return $"{StartDate} -től, {EndDate}-ig {DiscountRate}%-os akció.";

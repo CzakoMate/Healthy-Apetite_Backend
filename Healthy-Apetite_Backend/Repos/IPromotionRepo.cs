@@ -1,5 +1,5 @@
-﻿using Healthy_Apetite_Backend.Datas.Entities;
-using Healthy_Apetite_Backend.Datas.Responses;
+﻿using HealthyApetite.Shared.Models;
+using HealthyApetite.Shared.Responses;
 
 namespace Healthy_Apetite_Backend.Repos
 {

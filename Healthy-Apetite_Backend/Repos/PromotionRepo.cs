@@ -1,6 +1,6 @@
 ﻿using Healthy_Apetite_Backend.Context;
-using Healthy_Apetite_Backend.Datas.Entities;
-using Healthy_Apetite_Backend.Datas.Responses;
+using HealthyApetite.Shared.Models;
+using HealthyApetite.Shared.Responses;
 using Microsoft.EntityFrameworkCore;
 
 namespace Healthy_Apetite_Backend.Repos

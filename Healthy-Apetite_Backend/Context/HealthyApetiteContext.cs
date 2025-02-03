@@ -1,5 +1,4 @@
-﻿
-using Healthy_Apetite_Backend.Datas.Entities;
+﻿using HealthyApetite.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Healthy_Apetite_Backend.Context

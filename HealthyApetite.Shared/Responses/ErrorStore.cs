@@ -1,4 +1,4 @@
-﻿namespace Healthy_Apetite_Backend.Datas.Responses
+﻿namespace HealthyApetite.Shared.Responses
 {
     public class ErrorStore
     {

@@ -1,8 +1,9 @@
-﻿using Healthy_Apetite_Backend.Datas.Entities;
-using Healthy_Apetite_Backend.Datas.Responses;
-using Healthy_Apetite_Backend.Repos;
+﻿using Healthy_Apetite_Backend.Repos;
+using HealthyApetite.Shared.Models;
+using HealthyApetite.Shared.Responses;
 using Microsoft.AspNetCore.Mvc;
-
+using HealthyApetite.Shared.Dtos;
+using HealthyApetite.Shared.Extensions;
 namespace Healthy_Apetite_Backend.Controllers
 {
     [ApiController]
@@ -33,17 +34,17 @@ namespace Healthy_Apetite_Backend.Controllers
             {
                 promotion = await _promotionRepo.GetBy(id);
                 if (promotion is not null)
-                    return Ok(promotion);
+                    return Ok(promotion.ToPromotionDto());
             }
             return BadRequest("Az akció adat elérése nem sikerült.");
         }
         [HttpPut]
-        public async Task<ActionResult> UpdatePromotion(Promotion entity)
+        public async Task<ActionResult> UpdatePromotion(PromotionDto entity)
         {
             ControllerResponse response = new();
             if (_promotionRepo is not null)
             { 
-                response = await _promotionRepo.UpdatePromotion(entity);
+                response = await _promotionRepo.UpdatePromotion(entity.ToPromotion());
                 if (response.HasError)
                 {
                     return BadRequest(response);

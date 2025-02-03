@@ -1,4 +1,4 @@
-﻿using Healthy_Apetite_Backend.Datas.Entities;
+﻿using HealthyApetite.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 
@@ -20,13 +20,13 @@ namespace Healthy_Apetite_Backend.Context
                 {
                     StartDate =new DateTime(2025,02,17),
                     EndDate = new DateTime(2025,04,01),
-                    DiscountRate=5,
+                    DiscountRate=15,
                 },
                 new Promotion
                 {
                     StartDate =new DateTime(2025,03,22),
                     EndDate = new DateTime(2025,04,01),
-                    DiscountRate=5,
+                    DiscountRate=25,
                 },
             };
             modelBuilder.Entity<Promotion>().HasData(promotions);
