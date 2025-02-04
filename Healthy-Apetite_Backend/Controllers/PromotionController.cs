@@ -1,10 +1,10 @@
 ﻿using Healthy_Apetite_Backend.Repos;
 using HealthyApetite.Shared.Models;
-using HealthyApetite.Shared.Responses;
 using Microsoft.AspNetCore.Mvc;
 using HealthyApetite.Shared.Dtos;
 using HealthyApetite.Shared.Assemblers;
 using Healthy_Apetite_Backend.Controllers.Base;
+
 namespace Healthy_Apetite_Backend.Controllers
 {
     [ApiController]

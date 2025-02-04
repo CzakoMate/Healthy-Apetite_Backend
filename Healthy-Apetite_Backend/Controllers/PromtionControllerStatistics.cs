@@ -3,11 +3,10 @@ using HealthyApetite.Shared.Dtos;
 using HealthyApetite.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HealthyApetite.Backend.Controllers
+namespace Healthy_Apetite_Backend.Controllers
 {
     public partial class PromotionController : BaseController<Promotion, PromotionDto>
     {
-
         [HttpGet("getNumberOfPromotions")]
         public async Task<IActionResult> GetNumberOfPromotions()
         {

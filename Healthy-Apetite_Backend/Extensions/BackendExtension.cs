@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Healthy_Apetite_Backend.Context;
 using Healthy_Apetite_Backend.Repos;
+using HealthyApetite.Shared.Assemblers;
 
 namespace Healthy_Apetite_Backend.Extensions
 {
@@ -11,6 +12,7 @@ namespace Healthy_Apetite_Backend.Extensions
             services.ConfigureCors();
             services.ConfigureInMemoryContext();
             services.ConfigureRepos();
+            services.ConfigureAssamblers();
         }
 
         private static void ConfigureCors(this IServiceCollection services)
@@ -49,7 +51,13 @@ namespace Healthy_Apetite_Backend.Extensions
         }
         public static void ConfigureRepos(this IServiceCollection services)
         {
-            services.AddScoped<IPromotionRepo, PromotionRepo>();
+            services.AddScoped<IPromotionRepo, PromotionRepo<HealthyApetiteContext>>();
+
+        }
+
+        public static void ConfigureAssamblers(this IServiceCollection services)
+        {
+            services.AddScoped<PromotionAssembler>();
 
         }
     }

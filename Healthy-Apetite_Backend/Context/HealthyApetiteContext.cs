@@ -6,7 +6,7 @@ namespace Healthy_Apetite_Backend.Context
     public class HealthyApetiteContext : DbContext
     {
         private DbSet<Promotion> _promotions;
-        public HealthyApetiteContext(DbContextOptions options) : base(options)
+        public HealthyApetiteContext(DbContextOptions<HealthyApetiteContext> options) : base(options)
         {
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

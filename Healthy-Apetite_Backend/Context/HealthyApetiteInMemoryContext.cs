@@ -5,7 +5,7 @@ namespace Healthy_Apetite_Backend.Context
 {
     public class HealthyApetiteInMemoryContext : HealthyApetiteContext
     {
-        public HealthyApetiteInMemoryContext(DbContextOptions options) : base(options)
+        public HealthyApetiteInMemoryContext(DbContextOptions<HealthyApetiteContext> options) : base(options)
         {
         }
 

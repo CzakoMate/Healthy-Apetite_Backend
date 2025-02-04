@@ -1,9 +1,9 @@
-﻿using Kreta.Shared.Models;
-using Kreta.Shared.Responses;
+﻿using HealthyApetite.Shared.Models;
+using HealthyApetite.Shared.Responses;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Kreta.Backend.Repos.Base
+namespace Healthy_Apetite_Backend.Repos.Base
 {
     public class BaseRepo<TDbContext, TEntity> : IBaseRepo<TEntity>
         where TDbContext : DbContext
@@ -21,9 +21,9 @@ namespace Kreta.Backend.Repos.Base
 
         public async Task<IEnumerable<TEntity>> GetAllAsync() => await _dbSet!.ToListAsync();
         public async Task<IEnumerable<TEntity>> FindByConditionAsync(Expression<Func<TEntity, bool>> expression) => await _dbSet!.Where(expression).ToListAsync();
-        public async Task<Response> UpdateAsync(TEntity entity)
+        public async Task<ControllerResponse> UpdateAsync(TEntity entity)
         {
-            Response response = new();
+            ControllerResponse response = new();
             try
             {
                 if (_dbContext is not null)
@@ -41,13 +41,13 @@ namespace Kreta.Backend.Repos.Base
             return response;
         }
 
-        public async Task<Response> CreateAsync(TEntity entity)
+        public async Task<ControllerResponse> CreateAsync(TEntity entity)
         {
             try
             {
                 _dbSet!.Add(entity);
                 await _dbContext!.SaveChangesAsync();
-                return new Response();
+                return new ControllerResponse();
             }
             catch (Exception e)
             {
@@ -55,9 +55,9 @@ namespace Kreta.Backend.Repos.Base
             }
         }
 
-        public async Task<Response> DeleteAsync(Guid id)
+        public async Task<ControllerResponse> DeleteAsync(Guid id)
         {
-            Response response = new();
+            ControllerResponse response = new();
             TEntity? entityToDelete = _dbSet!.Where(e => e.Id == id).FirstOrDefault();
 
             if (entityToDelete is null)
@@ -86,9 +86,9 @@ namespace Kreta.Backend.Repos.Base
             return response;
         }
 
-        private static Response HandleException(string methodName, Exception? exception, string additionalMessage = "")
+        private static ControllerResponse HandleException(string methodName, Exception? exception, string additionalMessage = "")
         {
-            Response response = new();
+            ControllerResponse response = new();
             if (!string.IsNullOrEmpty(methodName))
                 response.AppendNewError($"{methodName} metódusban hiba történt.");
             if (exception is not null)
