@@ -40,5 +40,9 @@ namespace Healthy_Apetite_Backend.Repos
             }
             return response;
         }
+        public async Task<int> GetNumberOfPromotions()
+        {
+            return await _dbSet
+        }
     }
 }

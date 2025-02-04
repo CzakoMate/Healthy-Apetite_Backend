@@ -1,12 +1,11 @@
-﻿using HealthyApetite.Shared.Models;
+﻿using Healthy_Apetite_Backend.Repos.Base;
+using HealthyApetite.Shared.Models;
 using HealthyApetite.Shared.Responses;
 
 namespace Healthy_Apetite_Backend.Repos
 {
-    public interface IPromotionRepo
+    public interface IPromotionRepo: IBaseRepo<Promotion>
     {
-        Task<List<Promotion>> GetAll();
-        Task<Promotion> GetBy(Guid id);
-        Task<ControllerResponse> UpdatePromotion(Promotion promotion);
+        Task<int>GetNumberOfPromotions();
     }
 }

@@ -1,8 +1,9 @@
-﻿using System.Xml.Linq;
+﻿using System.Security.Principal;
+using System.Xml.Linq;
 
 namespace HealthyApetite.Shared.Models
 {
-    public class Promotion
+    public class Promotion: IDbEntity<Promotion>
     {
         public Promotion()
         {
